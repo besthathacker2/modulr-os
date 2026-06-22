@@ -1,6 +1,6 @@
 // kernel.cpp
 #include "applications.h"
-#include "wine.h"
+#include "wine_structures.h"
 
 extern "C" void init_64bit_paging();
 void parse_multiboot_tags(uint64_t magic, uint64_t addr);
