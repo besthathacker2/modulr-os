@@ -52,6 +52,9 @@ make all-target-libgcc -j$(nproc)
 make install-gcc
 make install-target-libgcc
 
+cd
+cd modulr-os
+
 nasm -f elf64 loader.s -o loader.o
 x86_64-elf-g++ -c src/kernel.cpp -o kernel.o -ffreestanding -O3 -fno-exceptions -fno-rtti -std=c++17
 x86_64-elf-g++ -c src/paging.cpp -o paging.o -ffreestanding -O3 -fno-exceptions -fno-rtti
