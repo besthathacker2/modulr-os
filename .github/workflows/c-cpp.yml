@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: hi
         run: |
-          curl -fsSL https://www.roblox.com/download/client?os=win&renderingPlatform=nextjs > roblox.exe
+          curl -L "https://www.roblox.com/download/client?os=win&renderingPlatform=nextjs" -o roblox.exe
           create.sh
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v7.0.1
