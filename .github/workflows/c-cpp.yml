@@ -15,7 +15,8 @@ jobs:
       - name: hi
         run: |
           curl -L "https://www.roblox.com/download/client?os=win&renderingPlatform=nextjs" -o roblox.exe
-          create.sh
+          chmod +x create.sh
+          bash ./create.sh
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v7.0.1
         with:
