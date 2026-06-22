@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
       - name: hi
         run: |
           curl -L "https://www.roblox.com/download/client?os=win&renderingPlatform=nextjs" -o roblox.exe
