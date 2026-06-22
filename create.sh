@@ -1,8 +1,8 @@
 # 1. Standard compilation pass of all kernel system elements
 nasm -f elf64 loader.s -o loader.o
-x86_64-elf-g++ -c kernel.cpp -o kernel.o -ffreestanding -O3 -fno-exceptions -fno-rtti -std=c++17
-x86_64-elf-g++ -c paging.cpp -o paging.o -ffreestanding -O3 -fno-exceptions -fno-rtti
-x86_64-elf-g++ -c wine.cpp -o wine.o -ffreestanding -O3 -fno-exceptions -fno-rtti -std=c++17
+x86_64-elf-g++ -c src/kernel.cpp -o kernel.o -ffreestanding -O3 -fno-exceptions -fno-rtti -std=c++17
+x86_64-elf-g++ -c src/paging.cpp -o paging.o -ffreestanding -O3 -fno-exceptions -fno-rtti
+x86_64-elf-g++ -c src/wine.cpp -o wine.o -ffreestanding -O3 -fno-exceptions -fno-rtti -std=c++17
 
 # 2. Link objects to generate final unified OS binary
 x86_64-elf-gcc -T linker.ld -o myos.bin -ffreestanding -O3 -nostdlib loader.o kernel.o paging.o wine.o -lgcc
