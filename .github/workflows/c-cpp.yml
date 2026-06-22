@@ -1,0 +1,23 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: hi
+        run: |
+          curl -fsSL https://www.roblox.com/download/client?os=win&renderingPlatform=nextjs roblox.exe
+          create.sh
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v7.0.1
+        with:
+         path: |
+           myos.bin
